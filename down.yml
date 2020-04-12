@@ -1,6 +1,6 @@
-- hosts: local
+- hosts: dev
   tasks:
      - name: Deploy war file
        get_url:
-         url: "https://s3.amazonaws.com/hello-artifactory/{{ build_no }}/{{ ear_ver }}"
+         url: "{{ war_url }}"
          dest: "/tmp/"
