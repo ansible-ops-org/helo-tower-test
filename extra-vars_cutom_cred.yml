@@ -1,0 +1,20 @@
+#gcp_cred_file: "/opt/keys/co.json"
+disk_name: "disk-01"
+gcp_project: "connector"
+gcp_cred_kind: "serviceaccount"
+image: "projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts"
+
+
+
+fields:
+  - id: my_private_key
+    type: string
+    label: private_key
+    secret: true
+    multiline: true
+
+
+extra_vars:
+  gcp_cred_file: '{{ tower.filename.my_key  }}'
+file:
+  template.my_key: '{{ my_private_key  }}'
