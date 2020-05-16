@@ -18,3 +18,6 @@ extra_vars:
   gcp_cred_file: '{{ tower.filename.my_key  }}'
 file:
   template.my_key: '{{ my_private_key  }}'
+  
+  
+  ssh-keygen -t rsa -f google_cloud_bastion -C nik
